@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Shipment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            background-color: #0078d4;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 36px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        form {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        
+        /* Style for the searchable drop-down */
+        .searchable-dropdown {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        
+        /* Style for the file input and file type select */
+        .file-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        
+        /* Style for the multiple file selection */
+        .file-type-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            background-color: #0078d4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Create New Shipment</h1>
+    </header>
+
+    <div class="container">
+        <form id="shipmentForm" enctype="multipart/form-data">
+            <label for="shipmentID">Shipment ID:</label>
+            <input type="text" id="shipmentID" name="shipmentID" required>
+            
+            <label for="origin">Origin:</label>
+            <input type="text" id="origin" name="origin" required>
+            
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" required>
+            
+            <label for="shipmentType">Shipment Type:</label>
+            <input type="text" id="shipmentType" name="shipmentType" required list="shipmentTypes">
+            <datalist id="shipmentTypes">
+                <option value="Air">
+                <option value="Ocean">
+                <option value="Land">
+            </datalist>
+            
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+            
+            <label for="fileInput">Choose Files (Multiple):</label>
+            <input type="file" id="fileInput" name="files" class="file-input" multiple>
+            
+            <label for="fileTypeSelect">File Type:</label>
+            <select id="fileTypeSelect" name="fileType" class="file-type-select">
+                <option value="Supplier Invoice">Supplier Invoice</option>
+                <option value="Packing List">Packing List</option>
+                <option value="BL">BL</option>
+            </select>
+            
+            <button type="submit">Create Shipment</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript code for form submission
+        const shipmentForm = document.getElementById('shipmentForm');
+        
+        shipmentForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            // Get form values
+            const shipmentID = document.getElementById('shipmentID').value;
+            const origin = document.getElementById('origin').value;
+            const destination = document.getElementById('destination').value;
+            const shipmentType = document.getElementById('shipmentType').value;
+            const quantity = document.getElementById('quantity').value;
+            const fileInput = document.getElementById('fileInput').files;
+            const fileType = document.getElementById('fileTypeSelect').value;
+            
+            // You can process the form data here, e.g., send it to the server
+            
+            // For demonstration purposes, we'll display an alert with the form data
+            let fileNames = [];
+            for (let i = 0; i < fileInput.length; i++) {
+                fileNames.push(fileInput[i].name);
+            }
+            alert(`Shipment ID: ${shipmentID}\nOrigin: ${origin}\nDestination: ${destination}\nShipment Type: ${shipmentType}\nQuantity: ${quantity}\nFile Type: ${fileType}\nSelected Files: ${fileNames.join(', ')}`);
+        });
+    </script>
+</body>
+</html>

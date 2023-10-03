@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New User</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    header {
+        background-color: #0078d4;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .shipment-card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+</style>
+<header>
+    <h1>New User - ZoharCargo</h1>
+</header>
+<body>
+    <h3>Please fill the form below to create a new user</h3>
+    <form action="ZoharCargoServer.com" method="post">
+        <label for="email">Enter you E-mail address:</label><br>
+        <input type="email" id="email" name="email" placeholder="example@example.com"required><br>
+        <label for="pwd">Create a Password:</label><br>
+        <input type="password" id="pwd" name="pwd" placeholder="a storng one..." required><br>
+        <!-- <label for="phone number">Phone Number:</label><br> -->
+        <!-- <input type="number" id="phone number" maxlength="9" minlength="9" style="width: 160px;" required><br> -->
+        <label for="phone">Enter your phone number:</label><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{7}" required><br>
+        <label for="company">Company name:</label><br>
+        <input type="text" id="company" name="company" required><br>
+        Gender:<br>
+        <input type="radio" id="male" name="Gender" value="Male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="Gender" value="Female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="Gender" value="Other">
+        <label for="other">Other</label><br>
+        <br>
+        <input type="checkbox" checked>I agree to the terms and conditions as mentioned <a href="T&C.html"> here  </a><br>
+        <br>
+        <input type="submit" value="Create new user"><br>
+        <input type="reset" value="Reset"><br>
+    </form>    
+</body>
+</html>

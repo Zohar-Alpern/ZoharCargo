@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shipments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            background-color: #0078d4;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 36px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .shipment-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+              /* Style for the "Create New Shipment" button */
+              .create-shipment-button {
+            background-color: #025b9f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Shipments - ZoharCargo</h1>
+    </header>
+
+    <div class="container">
+        <h2>Air Shipments</h2>  
+        <a href="CreateNewShipment.html"><button class="create-shipment-button">Create New Shipment</button></a>
+        <div class="shipment-card">
+            <!-- Air shipment details go here -->
+            <p>Shipment ID: 123456</p>
+            <p>Origin: New York</p>
+            <p>Destination: London</p>
+            <!-- Add more shipment details -->
+        </div>
+
+        <h2>Ocean Shipments</h2>
+        <div class="shipment-card">
+            <!-- Ocean shipment details go here -->
+            <p>Shipment ID: 789012</p>
+            <p>Origin: Los Angeles</p>
+            <p>Destination: Shanghai</p>
+            <!-- Add more shipment details -->
+        </div>
+        
+        <!-- Add more sections for other types of shipments if needed -->
+    </div>
+
+</body>
+</html>
